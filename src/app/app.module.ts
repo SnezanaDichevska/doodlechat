@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { ChatComponent } from './chat/chat.component';
 import {routing} from "./_routing/app.routing";
+import {firebaseModule} from "./_initializers/firebase.initializer";
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import {routing} from "./_routing/app.routing";
   ],
   imports: [
     routing,
+    firebaseModule,
     BrowserModule,
     FormsModule,
     HttpModule
