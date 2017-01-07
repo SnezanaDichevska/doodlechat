@@ -3,6 +3,7 @@ import {UnderscoreCase, DeserializeInto, Serialize, DeserializeKeysFrom, Seriali
 DeserializeKeysFrom(UnderscoreCase);
 SerializeKeysTo(UnderscoreCase);
 
+//https://github.com/weichx/cerialize
 export class Deserialization {
 
     constructor() {
