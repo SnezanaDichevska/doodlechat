@@ -11,7 +11,7 @@ import {User} from "../models/user.model";
 })
 export class RegisterComponent implements OnInit {
 
-  model: any = {};
+  model: User;
   loading = false;
 
   constructor(private router: Router,
@@ -19,6 +19,7 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.model = new User();
   }
 
   register() {

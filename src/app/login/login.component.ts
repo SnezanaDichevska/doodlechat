@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {AuthenticationService} from "../services/authentication-service";
+import {User} from "../models/user.model";
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ import {AuthenticationService} from "../services/authentication-service";
 })
 export class LoginComponent implements OnInit {
 
-  model: any = {};
+  model: User;
   loading = false;
   returnUrl: string;
 
@@ -20,6 +21,7 @@ export class LoginComponent implements OnInit {
     private authenticationService: AuthenticationService) { }
 
   ngOnInit() {
+    this.model = new User();
     // reset login status
     this.authenticationService.logout();
 
