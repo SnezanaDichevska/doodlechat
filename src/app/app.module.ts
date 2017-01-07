@@ -5,13 +5,15 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { ChatComponent } from './chat/chat.component';
-import {routing} from "./_routing/app.routing";
+import {routing, appRoutingProviders} from "./_routing/app.routing";
 import {firebaseModule} from "./_initializers/firebase.initializer";
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChatComponent
+    ChatComponent,
+    LoginComponent
   ],
   imports: [
     routing,
@@ -20,7 +22,7 @@ import {firebaseModule} from "./_initializers/firebase.initializer";
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [appRoutingProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

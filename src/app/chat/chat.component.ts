@@ -11,6 +11,8 @@ export class ChatComponent implements OnInit {
   items: FirebaseListObservable<any[]>;
 
   constructor(af: AngularFire) {
+    console.log("fireb")
+    console.log(af)
     this.items = af.database.list('/items');
   }
 

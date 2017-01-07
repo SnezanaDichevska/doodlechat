@@ -7,4 +7,4 @@ export const firebaseConfig = {
     storageBucket: "doodlechat-131e2.appspot.com",
     messagingSenderId: "89190610295"
 };
-export const firebaseModule = AngularFireModule.initializeApp(firebaseConfig)git opu
+export const firebaseModule = AngularFireModule.initializeApp(firebaseConfig)
