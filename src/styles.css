@@ -28,6 +28,14 @@ div.well{
   height: 150px;
   color: white;
 }
+.register-container{
+  border-radius: 25px;
+  background: darkseagreen;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+  color: white;
+}
 
 .white-text{
   color: white;

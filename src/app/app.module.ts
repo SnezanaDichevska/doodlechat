@@ -8,12 +8,14 @@ import { ChatComponent } from './chat/chat.component';
 import {routing, appRoutingProviders} from "./_routing/app.routing";
 import {firebaseModule} from "./_initializers/firebase.initializer";
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChatComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     routing,

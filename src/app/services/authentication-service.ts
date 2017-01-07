@@ -9,13 +9,9 @@ export class AuthenticationService {
   constructor(private af: AngularFire) {
   }
 
-  login(email: string, password: string) {
+  login(user: any) {
 
-    return this.af.auth.login(
-      {
-        email: email,
-        password: password
-      },
+    return this.af.auth.login(user,
       {
         provider: AuthProviders.Password,
         method: AuthMethods.Password,
@@ -24,8 +20,6 @@ export class AuthenticationService {
       console.log(user)
       // let user = response.json();
       // localStorage.setItem('currentUser', JSON.stringify(user));
-    }, (error) => {
-      console.log(error)
     });
   }
 

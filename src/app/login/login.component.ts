@@ -29,12 +29,14 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.loading = true;
-    this.authenticationService.login(this.model.username, this.model.password)
+    this.authenticationService.login(this.model)
       .then(
         data => {
           this.router.navigate([this.returnUrl]);
-        },
+        }).catch(
         error => {
+          console.log("Error:")
+          console.log(error)
           this.loading = false;
         });
   }
