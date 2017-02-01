@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {AuthenticationService} from "../services/authentication-service";
+import {AuthenticationService} from "../services/authentication.service";
 import {User} from "../models/user.model";
 
 @Component({
@@ -34,7 +34,8 @@ export class LoginComponent implements OnInit {
     this.authenticationService.login(this.model)
       .then(
         data => {
-          this.router.navigate([this.returnUrl]);
+         console.log("SUCCESS LOGIN")
+         this.router.navigate(['/chat']);
         }).catch(
         error => {
           console.log("Error:")

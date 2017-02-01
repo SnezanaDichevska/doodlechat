@@ -16,11 +16,12 @@ export class AuthenticationService {
       {
         provider: AuthProviders.Password,
         method: AuthMethods.Password,
-      }).then((user) => {
+      }).then((response:any) => {
       console.log("USer LOGIN")
-      console.log(user)
-      // let user = response.json();
-      // localStorage.setItem('currentUser', JSON.stringify(user));
+      console.log(response)
+      let user = new User().deserialize(response);
+      console.log(user);
+      localStorage.setItem('currentUser', user);
     });
   }
 

@@ -1,6 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {Router} from "@angular/router";
-import {UserService} from "../services/user-service";
+import {UserService} from "../services/user.service";
 import {User} from "../models/user.model";
 
 @Component({
@@ -20,6 +20,10 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     this.model = new User();
+  }
+
+  redirectBack(){
+    this.router.navigate(['/login']);
   }
 
   register() {

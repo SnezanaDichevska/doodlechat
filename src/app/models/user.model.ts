@@ -1,9 +1,10 @@
 import {Deserialization} from "./shared/deserialization.basemodel";
-import {autoserialize} from "cerialize";
+import {autoserialize, deserialize} from "cerialize";
 export class User extends Deserialization {
 
   @autoserialize email: string;
   @autoserialize password: string;
+  @deserialize uid:string;
 
   constructor(email?: string, password?: string) {
     super();
