@@ -1,8 +1,8 @@
 import {Routes, RouterModule} from "@angular/router";
 import {ModuleWithProviders} from "@angular/core";
-import {ChatComponent} from "../chat/chat.component";
-import {LoginComponent} from "../login/login.component";
-import {RegisterComponent} from "../register/register.component";
+import {ChatComponent} from "../components/chat/chat.component";
+import {LoginComponent} from "../components/login/login.component";
+import {RegisterComponent} from "../components/register/register.component";
 import {AuthGuard} from "../_quards/auth.guard";
 
 const appRoutes: Routes = [
