@@ -3,7 +3,6 @@ import {Router} from "@angular/router";
 import {UserService} from "../../services/user.service";
 import {User} from "../../models/user.model";
 
-
 @Component({
   selector: 'app-register',
   templateUrl: 'register.component.html',
@@ -33,8 +32,7 @@ export class RegisterComponent implements OnInit {
       .then(
         data => {
           // set success message and pass true paramater to persist the message after redirecting to the login page
-          console.log("Created user")
-          console.log(data)
+          data.auth.updateProfile(this.model.serialize());
           this.router.navigate(['/login']);
         })
       .catch(

@@ -7,7 +7,7 @@ export class UserService {
   constructor(private af: AngularFire) { }
 
   create(user: User) {
-    return this.af.auth.createUser(user.serialize());
+   return this.af.auth.createUser(user.serialize());
   }
 
 }

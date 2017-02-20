@@ -5,6 +5,14 @@
       <div class="col-sm-12 col-md-10 col-md-offset-1">
 
         <form name="loginForm" #loginForm="ngForm" (ngSubmit)="loginForm.form.valid && register()" novalidate>
+
+          <div class="form-group input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input type="text" class="form-control" name="name" [(ngModel)]="model.name" #name="ngModel"
+                   placeholder="Display name"
+                   required/>
+          </div>
+
           <div class="form-group input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
             <input type="email" class="form-control" name="email" [(ngModel)]="model.email" #username="ngModel"

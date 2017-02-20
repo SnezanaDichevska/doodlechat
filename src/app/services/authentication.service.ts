@@ -17,18 +17,15 @@ export class AuthenticationService {
         provider: AuthProviders.Password,
         method: AuthMethods.Password,
       }).then((response:any) => {
-      console.log("USer LOGIN")
-      console.log(response)
-      let user = new User().deserialize(response);
-      console.log(user);
-      localStorage.setItem('currentUser', user);
+
+      let user = new User().deserialize(response.auth);
+      user.saveInStorage();
     });
   }
 
-  logout() {
+  logout(user:User) {
     // remove user from local storage to log user out
     this.af.auth.logout();
-    console.log("User LOGOUT")
-    localStorage.removeItem('currentUser');
+    user.removeFromStorage();
   }
 }
