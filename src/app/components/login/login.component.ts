@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.model = new User();
     // reset login status
-    this.authenticationService.logout();
+    this.authenticationService.logout(this.model);
 
     // get return url from route parameters or default to '/'
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
     this.authenticationService.login(this.model)
       .then(
         data => {
+         console.log("SUCCESS LOGIN")
          console.log("SUCCESS LOGIN")
          this.router.navigate(['/chat']);
         }).catch(

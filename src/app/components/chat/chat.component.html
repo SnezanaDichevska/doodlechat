@@ -2,19 +2,14 @@
 
   <h3>CHAT</h3>
   <br>
-  <ul>
-    <!--<li class="text" *ngFor="let item of items | async">-->
-      <!--{{item?.$value}}-->
-    <!--</li>-->
-  </ul>
 
   <ul class="list-group">
     <li class="list-group-item active">Message history</li>
-    <li class="text" *ngFor="let item of items | async">
-      {{item.$value}}
+    <span *ngFor="let item of items | async">
+    <li class="list-group-item" *ngIf="item.text">
+      {{item.text}}
     </li>
-
-    <li class="list-group-item">Vestibulum at eros</li>
+    </span>
   </ul>
 
 
@@ -22,8 +17,8 @@
 
     <div class="form-group mx-sm-3">
       <label for="msg" class="sr-only">Message</label>
-      <input type="text" class="form-control" id="msg" placeholder="Write a message...">
+      <input #msg type="text" class="form-control" id="msg" placeholder="Write a message...">
     </div>
-    <button type="submit" class="btn btn-primary">Send</button>
+    <button type="submit" class="btn btn-primary" (click)="sendMsg(msg.value)">Send</button>
   </form>
 </div>
