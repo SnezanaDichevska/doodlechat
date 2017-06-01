@@ -1,5 +1,6 @@
 import {Deserialization} from "./shared/deserialization.basemodel";
 import {autoserialize, autoserializeAs} from "cerialize";
+import {UserStorageService} from "../services/local-storage/user-storage.service";
 export class User extends Deserialization {
 
   @autoserializeAs('displayName') name: string;
@@ -14,19 +15,6 @@ export class User extends Deserialization {
     if (password) this.password = password;
     if (name) this.name = name;
     if (photoUrl) this.photoUrl = photoUrl;
-  }
-
-  saveInStorage(){
-    localStorage.setItem('currentUser', JSON.stringify(this.serialize()));
-  }
-
-  loadFromStorage(){
-    let json = JSON.parse(localStorage.getItem('currentUser'));
-    this.deserialize(json);
-  }
-
-  removeFromStorage(){
-    localStorage.removeItem('currentUser');
   }
 
 }

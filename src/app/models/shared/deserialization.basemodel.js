@@ -2,6 +2,7 @@
 var serialize_1 = require("cerialize/dist/serialize");
 serialize_1.DeserializeKeysFrom(serialize_1.UnderscoreCase);
 serialize_1.SerializeKeysTo(serialize_1.UnderscoreCase);
+//https://github.com/weichx/cerialize
 var Deserialization = (function () {
     function Deserialization() {
     }
@@ -17,4 +18,3 @@ var Deserialization = (function () {
     return Deserialization;
 }());
 exports.Deserialization = Deserialization;
-//# sourceMappingURL=deserialization.basemodel.js.map
