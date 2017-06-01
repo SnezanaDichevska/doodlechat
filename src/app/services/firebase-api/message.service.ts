@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {AngularFire} from "angularfire2";
-import {Message} from "../models/message.model";
+import {Message} from "../../models/message.model";
 
 @Injectable()
 export class MessageService {
